@@ -74,7 +74,7 @@ class Module implements AutoloaderProvider
 
         $view->plugin('headTitle')->setSeparator(' - ')
                                   ->setAutoEscape(false)
-                                  ->append('ZF2 Skeleton Application');
+                                  ->append('code.ign');
 
         $basePath = $app->getRequest()->detectBaseUrl();
 

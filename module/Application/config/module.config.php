@@ -46,5 +46,45 @@ return array(
                 ),
             ),
         ),
+        'blog' => array(
+            'type' => 'Zend\Mvc\Router\Http\Literal',
+            'options' => array(
+                'route'    => '/blog',
+                'defaults' => array(
+                    'controller' => 'blog',
+                    'action'     => 'index',
+                ),
+            ),
+        ),
+        'api' => array(
+            'type' => 'Zend\Mvc\Router\Http\Literal',
+            'options' => array(
+                'route'    => '/api',
+                'defaults' => array(
+                    'controller' => 'api',
+                    'action'     => 'index',
+                ),
+            ),
+        ),
+        'jobs' => array(
+            'type' => 'Zend\Mvc\Router\Http\Literal',
+            'options' => array(
+                'route'    => '/jobs',
+                'defaults' => array(
+                    'controller' => 'jobs',
+                    'action'     => 'index',
+                ),
+            ),
+        ),
+        'people' => array(
+            'type' => 'Zend\Mvc\Router\Http\Literal',
+            'options' => array(
+                'route'    => '/people',
+                'defaults' => array(
+                    'controller' => 'people',
+                    'action'     => 'index',
+                ),
+            ),
+        ),
     ),
 );
