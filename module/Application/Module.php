@@ -72,13 +72,15 @@ class Module implements AutoloaderProvider
         $url     = $view->plugin('url');
         $url->setRouter($app->getRouter());
 
+        $view->plugin('doctype')->setDoctype(\Zend\View\Helper\Doctype::HTML5);
+
         $view->plugin('headTitle')->setSeparator(' - ')
                                   ->setAutoEscape(false)
                                   ->append('code.ign');
 
         $basePath = $app->getRequest()->getBaseUrl();
 
-        $view->plugin('headLink')->appendStylesheet($basePath . '/css/bootstrap.min.css');
+        $view->plugin('headLinkLess')->appendStylesheetLess($basePath . '/css/less/bootstrap.less');
 
         $html5js = '<script src="' . $basePath . '/js/html5.js"></script>';
         $view->plugin('placeHolder')->__invoke('html5js')->set($html5js);
