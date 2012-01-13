@@ -7,6 +7,7 @@ return array(
             'alias' => array(
                 'index' => 'Application\Controller\IndexController',
                 'error' => 'Application\Controller\ErrorController',
+                'people' => 'Application\Controller\PeopleController',
                 'view'  => 'Zend\View\PhpRenderer',
             ),
             'Zend\View\PhpRenderer' => array(

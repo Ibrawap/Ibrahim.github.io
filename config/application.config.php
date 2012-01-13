@@ -2,6 +2,7 @@
 return array(
     'modules' => array(
         'Application',
+        'IgnGravatar',
         'IgnLess',
     ),
     'module_listener_options' => array( 
