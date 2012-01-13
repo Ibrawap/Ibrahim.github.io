@@ -4,3 +4,6 @@
 [submodule "module/IgnLess"]
 	path = module/IgnLess
 	url = git@github.com:ign/IgnLess.git
+[submodule "module/IgnGravatar"]
+	path = module/IgnGravatar
+	url = git@github.com:ign/IgnGravatar.git
