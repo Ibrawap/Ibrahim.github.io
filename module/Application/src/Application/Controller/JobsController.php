@@ -3,11 +3,14 @@
 namespace Application\Controller;
 
 use Application\Mvc\Controller\ActionController,
+    Application\Model\Resumator\Feed as ResumatorFeed,
     Zend\Http\Client,
     Zend\Mvc\MvcEvent;
 
 class JobsController extends ActionController
 {
+
+    protected $resumatorFeed;
 
     public function preDispatch (MvcEvent $e)
     {
@@ -27,12 +30,11 @@ class JobsController extends ActionController
             $cache->setItem('resumator-feed', $xml);
         }
         
-        $simpleXml = new \SimpleXMLElement($xml);
-        \Zend\Debug::dump($simpleXml);
+        $this->resumatorFeed = new ResumatorFeed(new \SimpleXMLElement($xml));
     }
 
     public function indexAction()
     {
-        return array();
+        return array('jobs' => $this->resumatorFeed->getJobsByFilter('department', 'Engineering'));
     }
 }

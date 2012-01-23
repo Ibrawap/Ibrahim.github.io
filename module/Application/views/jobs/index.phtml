@@ -1,1 +1,17 @@
-<?php
+  <div class="hero-unit">
+    <h1>Welcome to code.ign</h1>
+    <p>This site contains the latest from IGN Engineering. Learn more about <a href="<?php echo $this->url('blog') ?>">what we do</a>, <a href="<?php echo $this->url('people') ?>">who we are</a>, and how you can <a href="<?php echo $this->url('jobs') ?>">join our team</a>!</p>
+    <p><a class="btn primary large" href="https://github.com/ign/code.ign.com">Behind this site &raquo;</a></p>
+  </div>
+
+<?php foreach ($this->jobs as $job): ?>
+  <div class="row">
+    <div class="span16">
+      <h2><?php echo $this->escape($job->getTitle()); ?></h2>
+      <h6><?php echo $this->escape($job->getCity()); ?>, <?php echo $this->escape($job->getState()); ?> <?php echo $this->escape($job->getCountry()); ?></h6>
+      <p><?php echo substr(strip_tags($job->getDescription()), 0, 512); ?>...</p>
+      <p><a class="btn" target="_blank" href="<?php echo $this->escape($job->getUrl()); ?>">Read More / Apply Now &raquo;</a></p>
+
+    </div>
+  </div>
+<?php endforeach; ?>
