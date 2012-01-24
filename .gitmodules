@@ -7,3 +7,6 @@
 [submodule "module/IgnGravatar"]
 	path = module/IgnGravatar
 	url = git@github.com:ign/IgnGravatar.git
+[submodule "module/IgnArticle"]
+	path = module/IgnArticle
+	url = git@github.com:ign/IgnArticle.git
