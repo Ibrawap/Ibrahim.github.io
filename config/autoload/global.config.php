@@ -12,5 +12,13 @@
  */
 
 return array(
-    // ...
+    'routes' => array(
+        'blog' => array(
+            'options' => array(
+                'defaults' => array(
+                    'blog_name' => 'greggy-ign',
+                ),
+            ),
+        ),
+    ),
 );

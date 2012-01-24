@@ -63,16 +63,6 @@ return array(
                 ),
             ),
         ),
-        'blog' => array(
-            'type' => 'Zend\Mvc\Router\Http\Literal',
-            'options' => array(
-                'route'    => '/blog',
-                'defaults' => array(
-                    'controller' => 'blog',
-                    'action'     => 'index',
-                ),
-            ),
-        ),
         'api' => array(
             'type' => 'Zend\Mvc\Router\Http\Literal',
             'options' => array(
