@@ -6,7 +6,7 @@
 
 <?php foreach ($this->jobs as $job): ?>
   <div class="row">
-    <div class="span16">
+    <div class="span12">
       <h2><?php echo $this->escape($job->getTitle()); ?></h2>
       <h6><?php echo $this->escape($job->getCity()); ?>, <?php echo $this->escape($job->getState()); ?> <?php echo $this->escape($job->getCountry()); ?></h6>
       <p><?php echo substr(strip_tags($job->getDescription()), 0, 512); ?>...</p>
