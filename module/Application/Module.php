@@ -15,6 +15,7 @@ class Module implements AutoloaderProvider
     {
         $events = StaticEventManager::getInstance();
         $events->attach('bootstrap', 'bootstrap', array($this, 'initializeView'), 100);
+        $events->attach('Zend\Mvc\Application', 'dispatch', array($this, 'initializeNavigation'));
     }
 
     public function getAutoloaderConfig()
@@ -89,5 +90,40 @@ class Module implements AutoloaderProvider
 
         $this->view = $view;
         return $view;
+    }
+
+    public function initializeNavigation($e)
+    {
+        $router = $e->getParam('router');
+        $routeMatch = $e->getParam('route-match');
+        $matchedRouteName = $routeMatch->getMatchedRouteName();
+        $container = new \Zend\Navigation\Navigation(array(
+            array(
+                'label' => 'Home',
+            	'uri' => $router->assemble(array(), array('name'=> 'home')),
+                'active' => 'home' === $matchedRouteName,
+            ),
+            array(
+                'label' => 'Blog',
+                'uri' => $router->assemble(array(), array('name'=> 'blog')),
+            	'active' => 'blog' === $matchedRouteName,
+            ),
+            array(
+                'label' => 'API',
+                'uri' => $router->assemble(array(), array('name'=> 'api')),
+            	'active' => 'api' === $matchedRouteName,
+            ),
+            array(
+                'label' => 'Jobs',
+                'uri' => $router->assemble(array(), array('name'=> 'jobs')),
+            	'active' => 'jobs' === $matchedRouteName,
+            ),
+            array(
+                'label' => 'People',
+                'uri' => $router->assemble(array(), array('name'=> 'people')),
+                'active' => 'people' === $matchedRouteName,
+            ),
+        ));
+        \Zend\Registry::set('Zend_Navigation', $container);
     }
 }

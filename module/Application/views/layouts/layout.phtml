@@ -35,22 +35,7 @@
       <div class="navbar-inner">
         <div class="container">
           <a class="brand" href="<?php echo $this->url('home') ?>">code.ign</a>
-
-          <ul class="nav">
-            <li class="active"><a href="<?php echo $this->url('home') ?>">Home</a></li>
-          </ul>
-          <ul class="nav">
-            <li class="active"><a href="<?php echo $this->url('blog') ?>">Blog</a></li>
-          </ul>
-          <ul class="nav">
-            <li class="active"><a href="<?php echo $this->url('api') ?>">API</a></li>
-          </ul>
-          <ul class="nav">
-            <li class="active"><a href="<?php echo $this->url('jobs') ?>">Jobs</a></li>
-          </ul>
-          <ul class="nav">
-            <li class="active"><a href="<?php echo $this->url('people') ?>">People</a></li>
-          </ul>
+          <?php echo $this->navigation()->menu()->setUlClass('nav'); ?>
         </div>
       </div>
 
