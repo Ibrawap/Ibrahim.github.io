@@ -83,6 +83,7 @@ class Module implements AutoloaderProvider
         $basePath = $app->getRequest()->getBaseUrl();
 
         $view->plugin('headLinkLess')->appendStylesheetLess($basePath . '/css/less/bootstrap.less');
+        $view->plugin('headLink')->appendStylesheet($basePath . '/css/styles.css');
 
         $html5js = '<script src="' . $basePath . '/js/html5.js"></script>';
         $view->plugin('placeHolder')->__invoke('html5js')->set($html5js);
