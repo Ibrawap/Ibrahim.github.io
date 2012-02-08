@@ -15,7 +15,8 @@ class Module implements AutoloaderProvider
     {
         $events = StaticEventManager::getInstance();
         $events->attach('bootstrap', 'bootstrap', array($this, 'initializeView'), 100);
-        $events->attach('Zend\Mvc\Application', 'dispatch', array($this, 'initializeNavigation'));
+        $events->attach('bootstrap', 'bootstrap', array($this, 'initializeNavigation'));
+        $events->attach('Zend\Mvc\Application', 'dispatch', array($this, 'setMatchedRouteNavigation'));
     }
 
     public function getAutoloaderConfig()
@@ -94,36 +95,48 @@ class Module implements AutoloaderProvider
 
     public function initializeNavigation($e)
     {
-        $router = $e->getParam('router');
-        $routeMatch = $e->getParam('route-match');
-        $matchedRouteName = $routeMatch->getMatchedRouteName();
+        $app = $e->getParam('application');
+        $router = $app->getRouter();
         $container = new \Zend\Navigation\Navigation(array(
             array(
                 'label' => 'Home',
+                'id' => 'home',
             	'uri' => $router->assemble(array(), array('name'=> 'home')),
-                'active' => 'home' === $matchedRouteName,
             ),
             array(
                 'label' => 'Blog',
+                'id' => 'blog',
                 'uri' => $router->assemble(array(), array('name'=> 'blog')),
-            	'active' => 'blog' === $matchedRouteName,
             ),
             array(
                 'label' => 'API',
+                'id' => 'api',
                 'uri' => $router->assemble(array(), array('name'=> 'api')),
-            	'active' => 'api' === $matchedRouteName,
             ),
             array(
                 'label' => 'Jobs',
+                'id' => 'jobs',
                 'uri' => $router->assemble(array(), array('name'=> 'jobs')),
-            	'active' => 'jobs' === $matchedRouteName,
             ),
             array(
                 'label' => 'People',
+                'id' => 'people',
                 'uri' => $router->assemble(array(), array('name'=> 'people')),
-                'active' => 'people' === $matchedRouteName,
             ),
         ));
         \Zend\Registry::set('Zend_Navigation', $container);
+    }
+
+    public function setMatchedRouteNavigation($e)
+    {
+        $container = \Zend\Registry::get('Zend_Navigation');
+        if ($container instanceof \Zend\Navigation\Navigation) {
+            $routeMatch = $e->getParam('route-match');
+            $matchedRouteName = $routeMatch->getMatchedRouteName();
+            $page = $container->findOneBy('id', $matchedRouteName);
+            if ($page) {
+                $page->setActive(true);
+            }
+        }
     }
 }
