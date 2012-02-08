@@ -20,5 +20,17 @@ return array(
                 ),
             ),
         ),
+        'blog-author' => array(
+            'options' => array(
+                'route' => '/people/:authorName',
+                'constraints' => array(
+                    'authorName' => '[a-zA-Z0-9_-]+',
+                ),
+                'defaults' => array(
+                    'controller' => 'people',
+                    'action'	 => 'person',
+                ),
+            ),
+        ),
     ),
 );
