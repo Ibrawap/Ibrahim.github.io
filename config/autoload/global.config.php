@@ -16,7 +16,14 @@ return array(
         'blog' => array(
             'options' => array(
                 'defaults' => array(
-                    'blog_name' => 'greggy-ign',
+                    'blog_name' => 'jimmcq',
+                ),
+            ),
+        ),
+        'blog-post' => array(
+            'options' => array(
+                'defaults' => array(
+                    'blog_name' => 'jimmcq',
                 ),
             ),
         ),
