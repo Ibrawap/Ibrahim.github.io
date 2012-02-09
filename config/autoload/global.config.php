@@ -16,14 +16,14 @@ return array(
         'blog' => array(
             'options' => array(
                 'defaults' => array(
-                    'blog_name' => 'jimmcq',
+                    'blog_name' => 'ign-tech',
                 ),
             ),
         ),
         'blog-post' => array(
             'options' => array(
                 'defaults' => array(
-                    'blog_name' => 'jimmcq',
+                    'blog_name' => 'ign-tech',
                 ),
             ),
         ),
