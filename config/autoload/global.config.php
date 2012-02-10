@@ -33,13 +33,13 @@ return array(
                         ),
                         'blog-author' => array(
                             'options' => array(
-                                'route' => '/people/:authorName',
+                                'route' => '/blog/author/:authorName',
                                 'constraints' => array(
                                     'authorName' => '[a-zA-Z0-9_-]+',
                                 ),
                                 'defaults' => array(
-                                    'controller' => 'people',
-                                    'action'	 => 'person',
+                                    'controller' => 'index',
+                                    'action'	 => 'blog-author',
                                 ),
                             ),
                         ),
