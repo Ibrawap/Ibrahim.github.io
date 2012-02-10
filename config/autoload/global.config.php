@@ -12,30 +12,38 @@
  */
 
 return array(
-    'routes' => array(
-        'blog' => array(
-            'options' => array(
-                'defaults' => array(
-                    'blog_name' => 'ign-tech',
-                ),
-            ),
-        ),
-        'blog-post' => array(
-            'options' => array(
-                'defaults' => array(
-                    'blog_name' => 'ign-tech',
-                ),
-            ),
-        ),
-        'blog-author' => array(
-            'options' => array(
-                'route' => '/people/:authorName',
-                'constraints' => array(
-                    'authorName' => '[a-zA-Z0-9_-]+',
-                ),
-                'defaults' => array(
-                    'controller' => 'people',
-                    'action'	 => 'person',
+    'di'                    => array(
+        'instance' => array(
+            'Zend\Mvc\Router\RouteStack' => array(
+                'parameters' => array(
+                    'routes' => array(
+                        'blog' => array(
+                            'options' => array(
+                                'defaults' => array(
+                                    'blog_name' => 'ign-tech',
+                                ),
+                            ),
+                        ),
+                        'blog-post' => array(
+                            'options' => array(
+                                'defaults' => array(
+                                    'blog_name' => 'ign-tech',
+                                ),
+                            ),
+                        ),
+                        'blog-author' => array(
+                            'options' => array(
+                                'route' => '/people/:authorName',
+                                'constraints' => array(
+                                    'authorName' => '[a-zA-Z0-9_-]+',
+                                ),
+                                'defaults' => array(
+                                    'controller' => 'people',
+                                    'action'	 => 'person',
+                                ),
+                            ),
+                        ),
+                    ),
                 ),
             ),
         ),

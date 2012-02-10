@@ -36,50 +36,54 @@ return array(
                     ),
                 ),
             ),
-        ),
-    ),
-    'routes' => array(
-        'default' => array(
-            'type'    => 'Zend\Mvc\Router\Http\Segment',
-            'options' => array(
-                'route'    => '/[:controller[/:action]]',
-                'constraints' => array(
-                    'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                    'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
-                ),
-                'defaults' => array(
-                    'controller' => 'index',
-                    'action'     => 'index',
-                ),
-            ),
-        ),
-        'home' => array(
-            'type' => 'Zend\Mvc\Router\Http\Literal',
-            'options' => array(
-                'route'    => '/',
-                'defaults' => array(
-                    'controller' => 'index',
-                    'action'     => 'index',
-                ),
-            ),
-        ),
-        'api' => array(
-            'type' => 'Zend\Mvc\Router\Http\Literal',
-            'options' => array(
-                'route'    => '/api',
-                'defaults' => array(
-                    'controller' => 'api',
-                    'action'     => 'index',
-                ),
-            ),
-        ),
-        'jobs' => array(
-            'type' => 'Zend\Mvc\Router\Http\Literal',
-            'options' => array(
-                'route'    => '/jobs',
-                'defaults' => array(
-                    'controller' => 'jobs',
-                    'action'     => 'index',
+            'Zend\Mvc\Router\RouteStack' => array(
+                'parameters' => array(
+                    'routes' => array(
+                        'default' => array(
+                            'type'    => 'Zend\Mvc\Router\Http\Segment',
+                            'options' => array(
+                                'route'    => '/[:controller[/:action]]',
+                                'constraints' => array(
+                                    'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                    'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                ),
+                                'defaults' => array(
+                                    'controller' => 'index',
+                                    'action'     => 'index',
+                                ),
+                            ),
+                        ),
+                        'home' => array(
+                            'type' => 'Zend\Mvc\Router\Http\Literal',
+                            'options' => array(
+                                'route'    => '/',
+                                'defaults' => array(
+                                    'controller' => 'index',
+                                    'action'     => 'index',
+                                ),
+                            ),
+                        ),
+                        'api' => array(
+                            'type' => 'Zend\Mvc\Router\Http\Literal',
+                            'options' => array(
+                                'route'    => '/api',
+                                'defaults' => array(
+                                    'controller' => 'api',
+                                    'action'     => 'index',
+                                ),
+                            ),
+                        ),
+                        'jobs' => array(
+                            'type' => 'Zend\Mvc\Router\Http\Literal',
+                            'options' => array(
+                                'route'    => '/jobs',
+                                'defaults' => array(
+                                    'controller' => 'jobs',
+                                    'action'     => 'index',
+                                ),
+                            ),
+                        ),
+                    ),
                 ),
             ),
         ),
