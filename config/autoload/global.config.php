@@ -11,8 +11,10 @@
  * file.
  */
 
-return array(
-    'di'                    => array(
+$blogName = 'igncode';
+
+$config = array(
+    'di' => array(
         'instance' => array(
             'Zend\Mvc\Router\RouteStack' => array(
                 'parameters' => array(
@@ -20,14 +22,14 @@ return array(
                         'blog' => array(
                             'options' => array(
                                 'defaults' => array(
-                                    'blog_name' => 'ign-tech',
+                                    'blog_name' => $blogName,
                                 ),
                             ),
                         ),
                         'blog-post' => array(
                             'options' => array(
                                 'defaults' => array(
-                                    'blog_name' => 'ign-tech',
+                                    'blog_name' => $blogName,
                                 ),
                             ),
                         ),
@@ -49,3 +51,6 @@ return array(
         ),
     ),
 );
+
+unset($blogName);
+return $config;
