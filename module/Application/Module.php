@@ -110,11 +110,6 @@ class Module implements AutoloaderProvider
                 'uri' => $router->assemble(array(), array('name'=> 'blog')),
             ),
             array(
-                'label' => 'API',
-                'id' => 'api',
-                'uri' => $router->assemble(array(), array('name'=> 'api')),
-            ),
-            array(
                 'label' => 'Jobs',
                 'id' => 'jobs',
                 'uri' => $router->assemble(array(), array('name'=> 'jobs')),
