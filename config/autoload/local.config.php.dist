@@ -11,6 +11,33 @@
  * credentials from accidentally being comitted into version control.
  */
 
+$emailAddresses = array(
+    'example@gmail.com',
+    'example@yahoo.com',
+    'example@hotmail.com',
+);
+
 return array(
-    // ...
+    'di' => array(
+        'instance' => array(
+            'article' => array(
+                'parameters' => array(
+                    'disqusPublicKey' => 'YOUR_PUBLIC_KEY',
+                    'disqusSecretKey' => 'YOUR_SECRET',
+                ),
+            ),
+            'people' => array(
+                'parameters' => array(
+                    'emailAddresses' => $emailAddresses,
+                ),
+            ),
+            'IgnLess\View\Helper\HeadLinkLess' => array(
+                'parameters' => array(
+                    // Choose one to set the mode for IgnLess
+                    //'mode' => \IgnLess\View\Helper\HeadLinkLess::MODE_COMPILED_MINIFIED,
+                    //'mode' => \IgnLess\View\Helper\HeadLinkLess::MODE_COMPILED,
+                ),
+            ),
+        ),
+    ),
 );
