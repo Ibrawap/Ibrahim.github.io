@@ -40,7 +40,7 @@ $config = array(
                                     'authorName' => '[a-zA-Z0-9_-]+',
                                 ),
                                 'defaults' => array(
-                                    'controller' => 'index',
+                                    'controller' => 'Application\Controller\IndexController',
                                     'action'	 => 'blog-author',
                                 ),
                             ),

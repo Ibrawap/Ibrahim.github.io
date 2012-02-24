@@ -20,13 +20,13 @@ $emailAddresses = array(
 return array(
     'di' => array(
         'instance' => array(
-            'article' => array(
+            'IgnArticle\Controller\ArticleController' => array(
                 'parameters' => array(
                     'disqusPublicKey' => 'YOUR_PUBLIC_KEY',
                     'disqusSecretKey' => 'YOUR_SECRET',
                 ),
             ),
-            'people' => array(
+            'IgnGravatar\Controller\PeopleController' => array(
                 'parameters' => array(
                     'emailAddresses' => $emailAddresses,
                 ),

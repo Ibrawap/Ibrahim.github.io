@@ -4,8 +4,10 @@ $this->headTitle()->setSeparator(' - ')
 
 $basePath = $this->basePath();
 $this->headLink()->appendStylesheet($basePath . '/css/bootstrap.min.css')
-                 ->appendStylesheet($basePath . '/css/style.css')
-                 ->appendStylesheet($basePath . '/css/bootstrap-responsive.min.css');
+                 ->appendStylesheet($basePath . '/css/style.css');
+                 
+                 // Disabling for now
+                 // ->appendStylesheet($basePath . '/css/bootstrap-responsive.min.css');
 
 $this->headLink(array(
             'rel'  => 'shortcut icon',
