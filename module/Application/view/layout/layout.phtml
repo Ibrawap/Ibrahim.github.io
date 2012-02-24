@@ -1,4 +1,24 @@
-<?php echo $this->doctype() ?>
+<?php 
+$this->headTitle()->setSeparator(' - ')
+                  ->setAutoEscape(false);
+
+$basePath = $this->basePath();
+$this->headLink()->appendStylesheet($basePath . '/css/bootstrap.min.css')
+                 ->appendStylesheet($basePath . '/css/style.css')
+                 ->appendStylesheet($basePath . '/css/bootstrap-responsive.min.css');
+
+$this->headLink(array(
+            'rel'  => 'shortcut icon',
+            'type' => 'image/vnd.microsoft.icon',
+            'href' => $basePath . '/images/favicon.ico',
+        ));
+
+// HTML5 shim, for IE6-8 support of HTML elements
+$this->headScript()->appendFile($basePath . '/js/html5.js', 'text/javascript', 
+    array('conditional' => 'lt IE9',));
+
+echo $this->doctype();
+?>
 
 <html lang="en">
   <head>
@@ -7,25 +27,11 @@
 
     <?php echo $this->headMeta() ?>
 
-    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-    <!--[if lt IE 9]>
-      <?php echo $this->placeholder('html5js') ?>
-
-    <![endif]-->
-
     <!-- Le styles -->
     <?php echo $this->headLink() ?>
-
+    
+    <!-- Scripts -->
     <?php echo $this->headScript() ?>
-
-    <style type="text/css">
-      body {
-        padding-top: 40px;
-      }
-    </style>
-
-    <!-- Le fav and touch icons -->
-    <?php echo $this->placeholder('favicon') ?>
 
   </head>
 
@@ -45,17 +51,27 @@
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
           <a class="brand" href="<?php echo $this->url('home') ?>">code.ign</a>
-          <?php echo $this->navigation()->menu()->setUlClass('nav'); ?>
+          <div class="nav-collapse">
+            <?php echo $this->navigation()->menu()->setUlClass('nav'); ?>
+          </div><!--/.nav-collapse -->
         </div>
       </div>
-
     </div>
 
     <div class="container">
+
       <?php echo $this->raw('content'); ?>
 
-      <footer class="footer">
+      <hr>
+
+      <footer>
         <p class="pull-right"><a target="_blank" href="https://github.com/zendframework/zf2">Powered by Zend Framework 2</a></p>
         <p>&copy; 2011 - <?php echo date('Y') ?> by <a target="_blank" href="http://corp.ign.com/">IGN Entertainment, Inc.</a> All rights reserved.</p>
       </footer>

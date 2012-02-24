@@ -1,51 +1,96 @@
 <?php
 return array(
-    'layout'                => 'layouts/layout.phtml',
-    'display_exceptions'    => true,
-    'di'                    => array(
+    'di' => array(
+        'definition' => array(
+            'class' => array(
+                'Zend\Mvc\Router\RouteStack' => array(
+                    'instantiator' => array(
+                        'Zend\Mvc\Router\Http\TreeRouteStack',
+                        'factory'
+                    ),
+                ),
+            ),
+        ),
         'instance' => array(
             'alias' => array(
-                'index' => 'Application\Controller\IndexController',
-                'error' => 'Application\Controller\ErrorController',
-				'jobs' => 'Application\Controller\JobsController',
-                'view'  => 'Zend\View\PhpRenderer',
                 'application-cache' => 'Zend\Cache\Storage\Adapter\Filesystem',
                 'application-cache-options' => 'Zend\Cache\Storage\Adapter\FilesystemOptions',
             ),
-            'Zend\Cache\Storage\Adapter\Filesystem' => array(
+
+            // Inject the plugin broker for controller plugins into
+            // the action controller for use by all controllers that
+            // extend it.
+            'Zend\Mvc\Controller\ActionController' => array(
                 'parameters' => array(
-                    'options' => 'application-cache-options',
+                    'broker' => 'Zend\Mvc\Controller\PluginBroker',
                 ),
-             ),
-            'Zend\Cache\Storage\Adapter\FilesystemOptions' => array(
-                 'parameters' => array(
-                     'options' => array(
-                        'cache_dir' => __DIR__ . '/../../../data/cache',
-                        'namespace' => 'code-ign-com',
-                        'ttl' => 3600,
-                    ),
-                 ),
-             ),
-            'Zend\View\PhpRenderer' => array(
+            ),
+            'Zend\Mvc\Controller\PluginBroker' => array(
                 'parameters' => array(
-                    'resolver' => 'Zend\View\TemplatePathStack',
-                    'options'  => array(
-                        'script_paths' => array(
-                            'application' => __DIR__ . '/../views',
-                        ),
+                    'loader' => 'Zend\Mvc\Controller\PluginLoader',
+                ),
+            ),
+
+            // Setup the View layer
+            'Zend\View\Resolver\AggregateResolver' => array(
+                'injections' => array(
+                    'Zend\View\Resolver\TemplatePathStack',
+                ),
+            ),
+            'Zend\View\Resolver\TemplatePathStack' => array(
+                'parameters' => array(
+                    'paths' => array(
+                        'application' => __DIR__ . '/../view',
                     ),
                 ),
             ),
+            'Zend\View\Renderer\PhpRenderer' => array(
+                'parameters' => array(
+                    'resolver' => 'Zend\View\Resolver\AggregateResolver',
+                ),
+            ),
+            'Zend\Mvc\View\DefaultRenderingStrategy' => array(
+                'parameters' => array(
+                    'baseTemplate' => 'layout/layout',
+                ),
+            ),
+            'Zend\Mvc\View\ExceptionStrategy' => array(
+                'parameters' => array(
+                    'displayExceptions' => true,
+                    'template' => 'error/index',
+                ),
+            ),
+            'Zend\Mvc\View\RouteNotFoundStrategy' => array(
+                'parameters' => array(
+                    'notFoundTemplate' => 'error/404',
+                ),
+            ),
+
+            // Setup the router and routes
             'Zend\Mvc\Router\RouteStack' => array(
                 'parameters' => array(
                     'routes' => array(
+                        'default' => array(
+                            'type' => 'Zend\Mvc\Router\Http\Segment',
+                            'options' => array(
+                                'route' => '/[:controller[/:action]]',
+                                'constraints' => array(
+                                    'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                    'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                ),
+                                'defaults' => array(
+                                    'controller' => 'Application\Controller\IndexController',
+                                    'action' => 'index',
+                                ),
+                            ),
+                        ),
                         'home' => array(
                             'type' => 'Zend\Mvc\Router\Http\Literal',
                             'options' => array(
-                                'route'    => '/',
+                                'route' => '/',
                                 'defaults' => array(
-                                    'controller' => 'index',
-                                    'action'     => 'index',
+                                    'controller' => 'Application\Controller\IndexController',
+                                    'action' => 'index',
                                 ),
                             ),
                         ),
@@ -54,11 +99,27 @@ return array(
                             'options' => array(
                                 'route'    => '/jobs',
                                 'defaults' => array(
-                                    'controller' => 'jobs',
-                                    'action'     => 'index',
+                                    'controller' => 'Application\Controller\JobsController',
+                                    'action => index',
                                 ),
                             ),
                         ),
+                    ),
+                ),
+            ),
+
+            // Setup the application cache
+            'Zend\Cache\Storage\Adapter\Filesystem' => array(
+                'parameters' => array(
+                    'options' => 'application-cache-options',
+                ),
+             ),
+            'Zend\Cache\Storage\Adapter\FilesystemOptions' => array(
+                'parameters' => array(
+                    'options' => array(
+                        'cache_dir' => __DIR__ . '/../../../data/cache',
+                        'namespace' => 'code-ign-com',
+                        'ttl' => 3600,
                     ),
                 ),
             ),

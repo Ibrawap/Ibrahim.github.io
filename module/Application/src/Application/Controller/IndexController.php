@@ -3,7 +3,8 @@
 namespace Application\Controller;
 
 use Zend\Mvc\Controller\ActionController,
-    IgnGravatar\Model\Profile as GravatarProfile;
+    IgnGravatar\Model\Profile as GravatarProfile,
+    Zend\View\Model\ViewModel;
 
 class IndexController extends ActionController
 {
@@ -20,7 +21,7 @@ class IndexController extends ActionController
 
     public function indexAction()
     {
-        return array();
+        return new ViewModel();
     }
 
     public function blogAuthorAction()

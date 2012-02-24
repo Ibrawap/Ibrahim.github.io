@@ -8,5 +8,4 @@ return array(
     'Application\Model\Resumator\Feed'            => __DIR__ . '/src/Application/Model/Resumator/Feed.php',
     'Application\Model\Resumator\Job'             => __DIR__ . '/src/Application/Model/Resumator/Job.php',
     'Application\Mvc\Controller\ActionController' => __DIR__ . '/src/Application/Mvc/Controller/ActionController.php',
-    'Application\View\Listener'                   => __DIR__ . '/src/Application/View/Listener.php',
 );
