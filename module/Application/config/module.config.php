@@ -14,7 +14,6 @@ return array(
         'instance' => array(
             'alias' => array(
                 'application-cache' => 'Zend\Cache\Storage\Adapter\Filesystem',
-                'application-cache-options' => 'Zend\Cache\Storage\Adapter\FilesystemOptions',
             ),
 
             // Inject the plugin broker for controller plugins into
@@ -111,12 +110,7 @@ return array(
             // Setup the application cache
             'Zend\Cache\Storage\Adapter\Filesystem' => array(
                 'parameters' => array(
-                    'options' => 'application-cache-options',
-                ),
-             ),
-            'Zend\Cache\Storage\Adapter\FilesystemOptions' => array(
-                'parameters' => array(
-                    'options' => array(
+                    'Zend\Cache\Storage\Adapter\Filesystem::__construct:options' => array(
                         'cache_dir' => __DIR__ . '/../../../data/cache',
                         'namespace' => 'code-ign-com',
                         'ttl' => 3600,
