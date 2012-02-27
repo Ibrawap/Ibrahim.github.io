@@ -100,7 +100,7 @@ return array(
                                 'route'    => '/jobs',
                                 'defaults' => array(
                                     'controller' => 'Application\Controller\JobsController',
-                                    'action => index',
+                                    'action' => 'index',
                                 ),
                             ),
                         ),
