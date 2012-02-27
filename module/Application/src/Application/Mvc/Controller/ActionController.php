@@ -4,7 +4,7 @@ namespace Application\Mvc\Controller;
 
 use Zend\Di\Definition\Annotation as Di,
     Zend\Mvc\MvcEvent,
-    Zend\View\PhpRenderer as Renderer;
+    Zend\View\Renderer\PhpRenderer;
 
 abstract class ActionController extends \Zend\Mvc\Controller\ActionController
 {
@@ -16,19 +16,19 @@ abstract class ActionController extends \Zend\Mvc\Controller\ActionController
     /**
      * @Di\Inject()
      */
-    public function setView(Renderer $view)
+    public function setView(PhpRenderer $view)
     {
         $this->view = $view;
         return $this;
     }
 
     /**
-     * @return Renderer
+     * @return PhpRenderer
      */
     public function getView()
     {
-        if (!$this->view instanceof Renderer) {
-            throw new \RuntimeException(__CLASS__ . ' expects a Zend\View\PhpRenderer to be injected by Di or otherwise');
+        if (!$this->view instanceof PhpRenderer) {
+            throw new \RuntimeException(__CLASS__ . ' expects a Zend\View\Renderer\PhpRenderer to be injected by Di or otherwise');
         }
         return $this->view;
     }
