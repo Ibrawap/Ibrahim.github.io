@@ -38,4 +38,9 @@ class IndexController extends ActionController
         }
         throw new \Exception('Profile not found');
     }
+
+    public function barAction()
+    {
+        return new ViewModel();
+    }
 }

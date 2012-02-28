@@ -103,6 +103,16 @@ return array(
                                 ),
                             ),
                         ),
+                        'bar' => array(
+                            'type' => 'Zend\Mvc\Router\Http\Literal',
+                            'options' => array(
+                                'route'    => '/bar',
+                                'defaults' => array(
+                                    'controller' => 'Application\Controller\IndexController',
+                                    'action' => 'bar',
+                                ),
+                            ),
+                        ),
                     ),
                 ),
             ),
