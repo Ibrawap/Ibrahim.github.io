@@ -2,13 +2,13 @@
     <h1>Join our team!</h1>
   </div>
 
-<?php foreach ($this->jobs as $job): ?>
+<?php foreach ($jobs as $job): ?>
   <hr>
   <div class="row">
     <div class="span12">
       <h2><?php echo $this->escape($job->getTitle()); ?></h2>
       <h6><?php echo $this->escape($job->getCity()); ?>, <?php echo $this->escape($job->getState()); ?> <?php echo $this->escape($job->getCountry()); ?></h6>
-      <p><?php echo substr(strip_tags($job->getDescription()), 0, 512); ?>...</p>
+      <p><?php echo $this->escape(substr(strip_tags($job->getDescription()), 0, 512)); ?>...</p>
       <p><a class="btn" target="_blank" href="<?php echo $this->escape($job->getUrl()); ?>">Read More / Apply Now &raquo;</a></p>
 
     </div>
