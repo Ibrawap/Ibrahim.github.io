@@ -51,7 +51,7 @@ def deploy(app_ref='', static_ref=''):
                 if not confirm("master branch does not match dev branch. Deploy anyway?", False):
                     abort("master branch does not match dev branch")
 
-    verify_master('git@github.com:ign/code.ign.com.git')
+    # verify_master('git@github.com:ign/code.ign.com.git')
 
     # Enforce minimum deploy message length to prevent people from accidentally e-mailing out their password
     deploy_message = ''

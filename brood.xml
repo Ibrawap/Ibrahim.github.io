@@ -65,7 +65,6 @@
         <parameters>
             <sudo>igndeploy</sudo>
             <directory>/export/apps/code.ign.com</directory>
-            <clean />
         </parameters>
     </action>
     <action class="Brood\Action\Restart\Apache">
