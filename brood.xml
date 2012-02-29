@@ -44,7 +44,7 @@
     <action class="Brood\Action\Announce\NewRelic">
         <overlord />
         <parameters>
-            <api_key>4ddbc123a5bee7a6b572b0843c12ad033b9f52a1</api_key>
+            <api_key>df8cb51da9518b2e6251709e878db7f28d18de99b9f52a1</api_key>
             <!-- Can have multiple apps -->
             <app_name>code.ign.com</app_name>
         </parameters>
