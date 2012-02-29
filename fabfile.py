@@ -80,7 +80,7 @@ def deploy(app_ref='', static_ref=''):
             return "'" + string.replace("'", "'\"'\"'") + "'"
 
         # Deploy app
-        log_file = '/logs/deploys/deploy_%s_app_%s.log' % (strftime('%Y%m%d-%H%M%S'), env.user)
+        log_file = '/logs/deploys/deploy_%s_code.ign.com_%s.log' % (strftime('%Y%m%d-%H%M%S'), env.user)
         values = (quote(deploy_message), quote(app_ref), quote(env.user), quote(log_file))
         sudo('/usr/local/php/bin/php bin/overlord.php -c ../code.ign.com/brood.xml -l DEBUG -m %s -r %s -u %s | tee %s | grep --line-buffered -v \' \(\*\*\|II\) \'' % values)
         sudo('bzip2 %s' % log_file)

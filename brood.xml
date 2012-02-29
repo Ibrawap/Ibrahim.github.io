@@ -29,7 +29,7 @@
         <parameters>
             <sudo>igndeploy</sudo>
             <directory>/export/apps/code.ign.com</directory>
-            <diff_url>https://github.com/ign/oyster/compare/%s...%s</diff_url>
+            <diff_url>https://github.com/ign/code.ign.com/compare/%s...%s</diff_url>
         </parameters>
     </action>
     <action class="Brood\Action\Announce\Email">
