@@ -68,6 +68,5 @@
         </parameters>
     </action>
     <action class="Brood\Action\Restart\Apache">
-        <overlord />
     </action>
 </brood>
