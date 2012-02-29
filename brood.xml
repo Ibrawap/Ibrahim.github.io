@@ -68,5 +68,7 @@
         </parameters>
     </action>
     <action class="Brood\Action\Restart\Apache">
+        <overlord />
+    	<hostgroup>code_app</hostgroup>
     </action>
 </brood>
