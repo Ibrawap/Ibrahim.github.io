@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<brood>
+    <!-- Gearman parameters used on both Overlord and Drones -->
+    <gearman timeout="3600000">
+        <server>media-gearman-prd-app-01.las1.colo.ignops.com</server>
+    </gearman>
+
+    <!-- Groups of hosts, typically each group is behind a different load balancer -->
+    <!-- Each host runs a Gearman worker called a Drone -->
+    <hostgroup name="code_app">
+        <host alias="code-app-01">media-code-prd-app-01.las1.colo.ignops.com</host>
+        <host alias="code-app-02">media-code-prd-app-02.las1.colo.ignops.com</host>
+    </hostgroup>
+
+    <!-- Actions to run, each will be run in order, serially -->
+    <!-- The Overlord coordinates the execution of these actions -->
+    <action class="Brood\Action\Distribute\Git">
+        <!-- Run this action on the Overlord itself (no Gearman involvement) -->
+        <overlord />
+        <!-- Action classes can take custom parameters -->
+        <parameters>
+            <sudo>igndeploy</sudo>
+            <directory>/export/apps/code.ign.com</directory>
+            <clean />
+        </parameters>
+    </action>
+    <action class="Brood\Action\Changelog\Git">
+        <overlord />
+        <parameters>
+            <sudo>igndeploy</sudo>
+            <directory>/export/apps/code.ign.com</directory>
+            <diff_url>https://github.com/ign/oyster/compare/%s...%s</diff_url>
+        </parameters>
+    </action>
+    <action class="Brood\Action\Announce\Email">
+        <overlord />
+        <parameters>
+            <!-- Can have multiple recipients -->
+            <to>ncalugar@ign.com</to>
+            <from>IGN Media Deployments &lt;deploys-media@ign.com&gt;</from>
+            <subject>Deploying code.ign.com</subject>
+        </parameters>
+    </action>
+    <action class="Brood\Action\Announce\NewRelic">
+        <overlord />
+        <parameters>
+            <api_key>4ddbc123a5bee7a6b572b0843c12ad033b9f52a1</api_key>
+            <!-- Can have multiple apps -->
+            <app_name>code.ign.com</app_name>
+        </parameters>
+    </action>
+    <action class="Brood\Action\Distribute\Git">
+        <!-- Actions are run on hostgroups/hosts concurrently -->
+        <hostgroup>code_app</hostgroup>
+        <parameters>
+            <sudo>igndeploy</sudo>
+            <directory>/export/apps/brood</directory>
+            <ref>HEAD</ref>
+            <clean />
+        </parameters>
+    </action>
+    <action class="Brood\Action\Distribute\Git">
+        <!-- Actions are run on hostgroups/hosts concurrently -->
+        <hostgroup>code_app</hostgroup>
+        <parameters>
+            <sudo>igndeploy</sudo>
+            <directory>/export/apps/code.ign.com</directory>
+            <clean />
+        </parameters>
+    </action>
+    <action class="Brood\Action\Restart\Apache">
+        <overlord />
+    </action>
+</brood>
