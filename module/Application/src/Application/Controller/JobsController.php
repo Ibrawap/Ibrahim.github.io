@@ -19,7 +19,9 @@ class JobsController extends ActionController
         
         if (false == ($xml = $cache->getItem('resumator-feed'))) {
             $client = new Client('http://app.theresumator.com/feeds/export/jobs/ign');
-            $response = $client->send();
+            $response = $client
+                ->setAdapter('Zend\Http\Client\Adapter\Curl')
+                ->send();
             if ($response->isSuccess()) {
                 $xml = $response->getBody();
             } else {
