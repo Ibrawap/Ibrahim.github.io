@@ -33,7 +33,15 @@ return array(
             // Setup the View layer
             'Zend\View\Resolver\AggregateResolver' => array(
                 'injections' => array(
+                    'Zend\View\Resolver\TemplateMapResolver',
                     'Zend\View\Resolver\TemplatePathStack',
+                ),
+            ),
+            'Zend\View\Resolver\TemplateMapResolver' => array(
+                'parameters' => array(
+                    'map'  => array(
+                        'layout/layout' => __DIR__ . '/../view/layout/layout.phtml',
+                    ),
                 ),
             ),
             'Zend\View\Resolver\TemplatePathStack' => array(
@@ -50,18 +58,20 @@ return array(
             ),
             'Zend\Mvc\View\DefaultRenderingStrategy' => array(
                 'parameters' => array(
-                    'baseTemplate' => 'layout/layout',
+                    'layoutTemplate' => 'layout/layout',
                 ),
             ),
             'Zend\Mvc\View\ExceptionStrategy' => array(
                 'parameters' => array(
                     'displayExceptions' => true,
-                    'template' => 'error/index',
+                    'exceptionTemplate' => 'error/index',
                 ),
             ),
             'Zend\Mvc\View\RouteNotFoundStrategy' => array(
                 'parameters' => array(
-                    'notFoundTemplate' => 'error/404',
+                    'displayNotFoundReason' => true,
+                    'displayExceptions'     => true,
+                    'notFoundTemplate'      => 'error/404',
                 ),
             ),
 
