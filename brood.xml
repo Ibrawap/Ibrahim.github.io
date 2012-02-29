@@ -36,7 +36,7 @@
         <overlord />
         <parameters>
             <!-- Can have multiple recipients -->
-            <to>ncalugar@ign.com</to>
+            <to>deploys-media@ign.com</to>
             <from>IGN Media Deployments &lt;deploys-media@ign.com&gt;</from>
             <subject>Deploying code.ign.com</subject>
         </parameters>
