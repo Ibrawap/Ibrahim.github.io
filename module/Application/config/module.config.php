@@ -113,7 +113,7 @@ return array(
                                     'controller' => 'Application\Controller\JobsController',
                                     'action' => 'index',
                                     'headTitle' => 'IGN Engineering Jobs',
-                                    'headMeta-description' => 'IGN is always hiring highly skilled software engineers in various disciplines. Check our current job opportunities!',
+                                    'headMeta-description' => 'IGN is always hiring highly skilled software engineers in various disciplines. Check out our current openings or tell us why we need YOU on our team!',
                                 ),
                             ),
                         ),
