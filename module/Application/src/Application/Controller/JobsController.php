@@ -37,6 +37,7 @@ class JobsController extends ActionController
 
     public function indexAction()
     {
+        $this->getLocator()->get('Zend\View\Renderer\PhpRenderer')->headTitle('IGN Engineering Jobs');
         return array('jobs' => $this->resumatorFeed->getJobsByFilter('department', 'Engineering'));
     }
 }
