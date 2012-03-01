@@ -23,6 +23,7 @@ $config = array(
                             'options' => array(
                                 'defaults' => array(
                                     'blog_name' => $blogName,
+                                    'headTitle' => 'IGN Engineering Blog',
                                 ),
                             ),
                         ),
@@ -42,6 +43,13 @@ $config = array(
                                 'defaults' => array(
                                     'controller' => 'Application\Controller\IndexController',
                                     'action'	 => 'blog-author',
+                                ),
+                            ),
+                        ),
+                        'people' => array(
+                            'options' => array(
+                                'defaults' => array(
+                                    'headTitle'  => 'IGN Engineers',
                                 ),
                             ),
                         ),
