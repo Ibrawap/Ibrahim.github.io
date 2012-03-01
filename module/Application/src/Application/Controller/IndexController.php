@@ -21,7 +21,10 @@ class IndexController extends ActionController
 
     public function indexAction()
     {
-        $this->getLocator()->get('Zend\View\Renderer\PhpRenderer')->headTitle('IGN Engineering Blog, Jobs & Engineers');
+        $routeMatch = $this->getEvent()->getRouteMatch();
+        $renderer = $this->getLocator()->get('Zend\View\Renderer\PhpRenderer');
+        $renderer->headTitle($routeMatch->getParam('headTitle'));
+        $renderer->headMeta($routeMatch->getParam('headMeta-description'), 'description');
         return new ViewModel();
     }
 

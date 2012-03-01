@@ -37,7 +37,10 @@ class JobsController extends ActionController
 
     public function indexAction()
     {
-        $this->getLocator()->get('Zend\View\Renderer\PhpRenderer')->headTitle('IGN Engineering Jobs');
+        $routeMatch = $this->getEvent()->getRouteMatch();
+        $renderer = $this->getLocator()->get('Zend\View\Renderer\PhpRenderer');
+        $renderer->headTitle($routeMatch->getParam('headTitle'));
+        $renderer->headMeta($routeMatch->getParam('headMeta-description'), 'description');
         return array('jobs' => $this->resumatorFeed->getJobsByFilter('department', 'Engineering'));
     }
 }
