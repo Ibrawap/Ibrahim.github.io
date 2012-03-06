@@ -2,6 +2,9 @@
 
 	<?php echo $this->headLink()->appendStylesheet( 'http://fonts.googleapis.com/css?family=Fredericka+the+Great|Open+Sans+Condensed:700' ); ?>
 	<?php echo $this->headLink()->appendStylesheet( '/css/code-foo.css' ); ?>
+	
+	<?php echo $this->headScript()->appendFile( '/js/jquery-1.7.1.min.js' ); ?>
+	<?php echo $this->headScript()->appendFile( '/js/jquery-code-foo-controller.js' ); ?>
 	<!-- Code-Foo -->
 	
 		<div class="row-fluid cf-header-container">
@@ -58,6 +61,7 @@
 		
 		<div class="row-fluid cf-culture">
 			<div class="container">
+				<div class="culture-bookmark"></div>
 				<div class="main-image-container">
 					<img src="/images/code-foo/gallery-01-large.jpg" alt="gallery-01-large" width="460" height="295" />
 				</div>
@@ -77,6 +81,42 @@
 					<p>
 						Want to see more? <a href="#">Check out the tour of our offices as performed by Peer</a>. 
 					</p>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row cf-speakers">
+			<div class="container">
+				<h4>Speakers</h4>
+				<div class="span2">
+					<a href="#">
+						<span>Adam Passey</span>
+					</a>
+				</div>
+				<div class="span2">
+					<a href="#">
+						<span>J Kartje</span>
+					</a>
+				</div>
+				<div class="span2">
+					<a href="#">
+						<span>Trevor Dasch</span>
+					</a>
+				</div>
+				<div class="span2">
+					<a href="#">
+						<span>Warren.</span>
+					</a>
+				</div>
+				<div class="span2">
+					<a href="#">
+						<span>@whodunit</span>
+					</a>
+				</div>
+				<div class="span2">
+					<a href="#">
+						<span>Steve Worbel</span>
+					</a>
 				</div>
 			</div>
 		</div>

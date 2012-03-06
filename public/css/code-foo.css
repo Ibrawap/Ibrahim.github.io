@@ -117,6 +117,7 @@ body {
 			font-size: 24px;
 			padding: 15px 0 15px 10px;
 			margin-top: -48px;
+			margin-left: 10px;
 		}
 			.cf-subhead .span4 {
 				padding-top: 100px;
@@ -146,6 +147,14 @@ body {
 			.cf-culture .main-image-container {
 				float: left; 
 			}
+				.cf-culture .culture-bookmark {
+					width: 73px;
+					height: 168px;
+					background: url('/images/code-foo/culture-bookmark.png') no-repeat;
+					margin-top: -20px;
+					margin-left: 25px;
+					position: absolute;
+				}
 			.cf-culture .image-gallery {
 				width: 140px;
 				float: left;
@@ -178,4 +187,40 @@ body {
 						color: #9bbe4e;
 						font-weight: bold;
 					}
+	/**
+	 *	Speakers
+	 */
+	.cf-speakers { }
+		.cf-speakers .container { width: 960px; }
+		.cf-speakers h4 {
+			font-family: 'Open Sans Condensed', sans-serif;
+			font-size: 48px;
+			margin-top: 5px;
+			margin-bottom: 35px;
+			color: #FFF;
+			text-transform: uppercase;
+		}
+			.cf-speakers .span2 {
+				background: url('/images/code-foo/speakers-sprite.jpg') no-repeat;
+				height: 140px;
+				margin-bottom: 20px;
+			}
+				.cf-speakers .span2 a {
+					display: block;
+					width: 140px;
+					height: 140px;
+					text-decoration: none;
+					overflow: hidden;
+				}
+				.cf-speakers .span2 a span {
+					opacity: 0;
+					background: #FFF;
+					color: #000;
+					font-family: 'Open Sans Condensed', sans-serif;
+					font-size: 28px;
+					text-transform: uppercase;
+					line-height: 38px;
+					margin-top: 8px;
+				}
+	
 	
