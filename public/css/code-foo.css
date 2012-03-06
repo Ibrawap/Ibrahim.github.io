@@ -106,7 +106,8 @@ body {
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#474747', endColorstr='#1d1d1d',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 	}
 		.cf-subhead .container {
-		
+			width: 960px;
+			padding-bottom: 100px;
 		}
 		.cf-subhead h4 {
 			background: #ff3232;
@@ -117,35 +118,21 @@ body {
 			padding: 15px 0 15px 10px;
 			margin-top: -48px;
 		}
-		.cf-subhead ul {
-			padding: 100px 0;
-			height: 200px;
-			color: #FFF;
-			margin-left: 0 !important;
-			list-style: none;
-			list-style-type: none;
-		}
-			
-			.cf-subhead ul li {
-				width: 295px;
-				padding-right: 25px;
-				float: left;
-				font-weight: 400;
+			.cf-subhead .span4 {
+				padding-top: 100px;
+			    color: #FFF;
 			}
-				.cf-subhead ul li:last-child {
-					padding-right: 0;
-				}
-				.cf-subhead ul li strong {
-					font-family: 'Open Sans Condensed', sans-serif;
-					font-size: 30px;
-					text-shadow: -2px 2px 3px rgba(0,0,0,0.4);
-					text-transform: uppercase;
-				}
-				.cf-subhead ul li p {
-					font-size: 14px;
-					line-height: 20px;
-					margin-top: 20px;
-				}
+			.cf-subhead .span4 strong {
+			    font-family: 'Open Sans Condensed', sans-serif;
+			    font-size: 30px;
+			    text-shadow: -2px 2px 3px rgba(0,0,0,0.4);
+			    text-transform: uppercase;
+			}
+			.cf-subhead .span4 p {
+			    font-size: 14px;
+			    line-height: 20px;
+			    margin-top: 20px;
+			}
 				
 	/**
 	 *	Culture
