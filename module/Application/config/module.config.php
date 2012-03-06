@@ -117,6 +117,16 @@ return array(
                                 ),
                             ),
                         ),
+                        'foo' => array(
+                            'type' => 'Zend\Mvc\Router\Http\Literal',
+                            'options' => array(
+                                'route'    => '/foo',
+                                'defaults' => array(
+                                    'controller' => 'Application\Controller\IndexController',
+                                    'action' => 'foo',
+                                ),
+                            ),
+                        ),
                         'bar' => array(
                             'type' => 'Zend\Mvc\Router\Http\Literal',
                             'options' => array(

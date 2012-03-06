@@ -71,6 +71,11 @@ class Module implements AutoloaderProvider
                 'id' => 'people',
                 'uri' => $router->assemble(array(), array('name'=> 'people')),
             ),
+            array(
+            	'label' => 'Foo',
+            	'id' => 'foo',
+            	'uri' => $router->assemble(array(), array('name' => 'foo')),
+            )
         ));
         \Zend\Registry::set('Zend_Navigation', $container);
     }
