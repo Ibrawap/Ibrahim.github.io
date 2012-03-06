@@ -1,0 +1,194 @@
+/* overrides */
+.navbar-inner{background-color:#535353; background-image:-moz-linear-gradient(top, #535353, #000000);background-image:-ms-linear-gradient(top, #535353, #000000);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#535353), to(#000000));background-image:-webkit-linear-gradient(top, #535353, #000000);background-image:-o-linear-gradient(top, #535353, #000000);background-image:linear-gradient(top, #535353, #000000);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d32028', endColorstr='#a71920', GradientType=0);-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;-webkit-box-shadow:0 1px 3px rgba(0, 0, 0, 0.25),inset 0 -1px 0 rgba(0, 0, 0, 0.1);-moz-box-shadow:0 1px 3px rgba(0, 0, 0, 0.25),inset 0 -1px 0 rgba(0, 0, 0, 0.1);box-shadow:0 1px 3px rgba(0, 0, 0, 0.25),inset 0 -1px 0 rgba(0, 0, 0, 0.1);}
+.navbar { margin-bottom: 0px !important; }
+footer a { color: #FFF; }
+	footer a:hover { color: #FFF; }
+
+/**
+ *	Google API fonts used:
+ *	
+ *	font-family: 'Open Sans Condensed', sans-serif;
+ *	font-family: 'Fredericka the Great', cursive;
+ */
+
+/* Code-Foo styling */
+body {
+	background-color: #000;
+	padding-top: 40px !important;
+}
+	.cf-header-container {
+		background: #d8d8d8;
+	}
+	.cf-header-container .container {
+		padding-bottom: 125px;
+		background: rgb(255,255,255); /* Old browsers */
+		background: -moz-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%, rgba(216,216,216,1) 69%); /* FF3.6+ */
+		background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(255,255,255,1)), color-stop(69%,rgba(216,216,216,1))); /* Chrome,Safari4+ */
+		background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(216,216,216,1) 69%); /* Chrome10+,Safari5.1+ */
+		background: -o-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(216,216,216,1) 69%); /* Opera 12+ */
+		background: -ms-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(216,216,216,1) 69%); /* IE10+ */
+		background: radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(216,216,216,1) 69%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d8d8d8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+	}
+		.cf-header-container .container h1 {
+			font-family: 'Open Sans Condensed', sans-serif;
+			color: #1a1a1a;
+			font-size: 156px;
+			line-height: 130px;
+			text-transform: uppercase;
+			
+			margin-top: 105px;
+		}
+			.cf-header-container .container h1 span {
+				font-family: 'Fredericka the Great', cursive;
+				color: #3e3e3e;
+				font-size: 147px;
+			}
+			.cf-header-container .container sup {
+				background: url('/images/code-foo/typography-spritesheet.png') no-repeat;
+				width: 55px;
+				height: 72px;
+				text-indent: -999999px;
+				float: right;
+				margin: -130px 50px;
+			}
+			.cf-header-container .container h3 {
+				color: #838383;
+				font-size: 24px;
+				font-family: 'Open Sans Condensed', sans-serif;
+				padding-left: 10px;
+			}
+				.cf-header-container .container h3 a {
+					color: #a1cf3d;
+				}
+		.cf-ribbon {
+			float: right;
+			background: #202020 url('/images/code-foo/pattern-diagnol.png') repeat;
+			font-family: 'Open Sans Condensed', sans-serif;
+			text-align: center;
+			padding: 25px 0 0 0;
+		}
+			.cf-ribbon .line {
+				display: block;
+				font-size: 36px;
+				color: #FFF;
+				line-height: 38px;
+				text-transform: uppercase;
+			}
+				.cf-ribbon .line.small {
+					line-height: 20px;
+				}
+			.cf-ribbon .year {
+				font-size: 48px;
+				color: rgba( 255,255,255, 0.8);
+			}
+				.cf-ribbon .start-date small { color: #a1cf3d; }
+				.cf-ribbon .end-date small { color: #ff3434; }
+			.cf-ribbon .ribbon-hash {
+				float: right;
+				width: 0;
+				height: 80px;
+				border-bottom: 80px solid #d8d8d8; 
+				border-left: 80px solid transparent;
+			}
+	/**
+	 *	sub header
+	 */
+	.cf-subhead {
+		background: rgb(71,71,71); /* Old browsers */
+		background: -moz-radial-gradient(center, ellipse cover,  rgba(71,71,71,1) 0%, rgba(29,29,29,1) 69%); /* FF3.6+ */
+		background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(71,71,71,1)), color-stop(69%,rgba(29,29,29,1))); /* Chrome,Safari4+ */
+		background: -webkit-radial-gradient(center, ellipse cover,  rgba(71,71,71,1) 0%,rgba(29,29,29,1) 69%); /* Chrome10+,Safari5.1+ */
+		background: -o-radial-gradient(center, ellipse cover,  rgba(71,71,71,1) 0%,rgba(29,29,29,1) 69%); /* Opera 12+ */
+		background: -ms-radial-gradient(center, ellipse cover,  rgba(71,71,71,1) 0%,rgba(29,29,29,1) 69%); /* IE10+ */
+		background: radial-gradient(center, ellipse cover,  rgba(71,71,71,1) 0%,rgba(29,29,29,1) 69%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#474747', endColorstr='#1d1d1d',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	}
+		.cf-subhead .container {
+		
+		}
+		.cf-subhead h4 {
+			background: #ff3232;
+			color: #ffffff;
+			width: 290px;	
+			font-family: 'Open Sans Condensed', sans-serif;
+			font-size: 24px;
+			padding: 15px 0 15px 10px;
+			margin-top: -48px;
+		}
+		.cf-subhead ul {
+			padding: 100px 0;
+			height: 200px;
+			color: #FFF;
+			margin-left: 0 !important;
+			list-style: none;
+			list-style-type: none;
+		}
+			
+			.cf-subhead ul li {
+				width: 295px;
+				padding-right: 25px;
+				float: left;
+				font-weight: 400;
+			}
+				.cf-subhead ul li:last-child {
+					padding-right: 0;
+				}
+				.cf-subhead ul li strong {
+					font-family: 'Open Sans Condensed', sans-serif;
+					font-size: 30px;
+					text-shadow: -2px 2px 3px rgba(0,0,0,0.4);
+					text-transform: uppercase;
+				}
+				.cf-subhead ul li p {
+					font-size: 14px;
+					line-height: 20px;
+					margin-top: 20px;
+				}
+				
+	/**
+	 *	Culture
+	 */
+	.cf-culture {
+		background: #FFF;
+	}
+		.cf-culture .container {
+			padding: 50px 0;
+		}
+			.cf-culture .main-image-container {
+				float: left; 
+			}
+			.cf-culture .image-gallery {
+				width: 140px;
+				float: left;
+				list-style: none;
+				list-style-type: none;
+			}
+				.cf-culture .image-gallery li {
+					margin-bottom: 10px;
+				}
+					.cf-culture .image-gallery li a:hover {
+						opacity: 0.8;
+					}
+			.cf-culture .span4 {
+				float: left;
+				width: 290px;
+			}
+				.cf-culture .span4 strong {
+					font-family: 'Open Sans Condensed', sans-serif;
+					font-size: 30px;
+					color: #1a1a1a;
+					text-transform: uppercase;
+				}
+				.cf-culture .span4 p {
+					margin-top: 20px;
+					font-size: 14px;
+					color: #1a1a1a;
+					font-weight: 500;
+				}
+					.cf-culture .span4 p a {
+						color: #9bbe4e;
+						font-weight: bold;
+					}
+	

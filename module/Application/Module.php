@@ -72,7 +72,7 @@ class Module implements AutoloaderProvider
                 'uri' => $router->assemble(array(), array('name'=> 'people')),
             ),
             array(
-            	'label' => 'Foo',
+            	'label' => 'Code-Foo',
             	'id' => 'foo',
             	'uri' => $router->assemble(array(), array('name' => 'foo')),
             )
