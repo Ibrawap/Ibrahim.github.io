@@ -17,13 +17,17 @@ jQuery(document).ready(function() {
 		jQuery('span',this).stop().animate({ opacity: 0.0 },100);
 	});;
 	
-	Application.show();
-	
 	jQuery('.apply-now').click(function(e) {
 		Application.show();
 		
 		e.stopPropagation();
 		e.preventDefault();
+	});
+
+	jQuery('body').click(function(e) {
+		var application = jQuery('.application-overlay');
+		if( application.has(e.target).length === 0) 
+			Application.hide();
 	});
 	
 });
