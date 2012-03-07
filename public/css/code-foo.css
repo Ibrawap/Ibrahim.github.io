@@ -16,6 +16,18 @@ body {
 	background-color: #000;
 	padding-top: 40px !important;
 }
+	.application-overlay {
+		position: absolute;
+		top: -1200px; 
+		z-index: 1001;
+	}
+		.application-overlay .container {
+			background: #FFF;
+			height: 1000px;
+			width: 760px;
+			
+			box-shadow: 0px 0px 50px rgba(0,0,0,0.9);
+		}
 	.cf-header-container {
 		background: #d8d8d8;
 	}
@@ -51,7 +63,8 @@ body {
 				height: 72px;
 				text-indent: -999999px;
 				float: right;
-				margin: -130px 50px;
+				margin-right: 200px;
+				/* margin: -130px 50px; */
 			}
 			.cf-header-container .container h3 {
 				color: #838383;
@@ -63,10 +76,14 @@ body {
 					color: #a1cf3d;
 				}
 		.cf-ribbon {
-			float: right;
-			background: #202020 url('/images/code-foo/pattern-diagnol.png') repeat;
+			position: absolute;
+			z-index: 1002;
+			width: 140px;
+			margin-left: 810px;
+			background: #202020 url('/images/code-foo/pattern-diagnol.png') bottom left repeat;
 			font-family: 'Open Sans Condensed', sans-serif;
 			text-align: center;
+			overflow: visible;
 			padding: 25px 0 0 0;
 		}
 			.cf-ribbon .line {
