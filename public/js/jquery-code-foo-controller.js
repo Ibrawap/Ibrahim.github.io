@@ -17,4 +17,11 @@ jQuery(document).ready(function() {
 	
 	//Application.show();
 	
+	jQuery('.apply-now').click(function(e) {
+		Application.show();
+		
+		e.stopPropagation();
+		e.preventDefault();
+	});
+	
 });
