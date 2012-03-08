@@ -30,4 +30,19 @@ jQuery(document).ready(function() {
 			Application.hide();
 	});
 	
+	jQuery('.image-gallery a').click(function(e) {
+		
+		var src = jQuery(this).attr('href');
+		jQuery('.main-image-container img').hide().attr('src', src).fadeIn('fast');
+		
+		jQuery('.image-gallery a').each(function() {
+			jQuery(this).removeClass('active');
+		});
+		
+		jQuery(this).addClass('active');
+		
+		e.stopPropagation();
+		e.preventDefault();
+	});
+	
 });

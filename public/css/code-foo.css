@@ -161,6 +161,8 @@ body {
 		}
 			.cf-culture .main-image-container {
 				float: left; 
+				width: 460px;
+				height: 295px;
 			}
 				.cf-culture .culture-bookmark {
 					width: 73px;
@@ -169,6 +171,7 @@ body {
 					margin-top: -20px;
 					margin-left: 25px;
 					position: absolute;
+					z-index: 1003;
 				}
 			.cf-culture .image-gallery {
 				width: 140px;
@@ -177,11 +180,33 @@ body {
 				list-style-type: none;
 			}
 				.cf-culture .image-gallery li {
-					margin-bottom: 10px;
+					margin-bottom: 18px;
 				}
-					.cf-culture .image-gallery li a:hover {
-						opacity: 0.8;
+					.cf-culture .image-gallery li a {
+						width: 140px;
+						height: 60px;
+						display: block;
 					}
+						.cf-culture .image-gallery li a:hover {
+							opacity: 0.8;
+						}
+						.image-gallery .active {
+							/*box-shadow: 0px 0px 15px #000;*/
+							border: 10px solid #000;
+							margin-left: -10px;
+						}
+						.gallery-link-one {
+							background: url('/images/code-foo/gallery-small-sheet.jpg') no-repeat; 
+						}
+						.gallery-link-two {
+							background: url('/images/code-foo/gallery-small-sheet.jpg') 0 -60px no-repeat; 
+						}
+						.gallery-link-three {
+							background: url('/images/code-foo/gallery-small-sheet.jpg') 0 -120px no-repeat; 
+						}
+						.gallery-link-four {
+							background: url('/images/code-foo/gallery-small-sheet.jpg') 0 -180px no-repeat; 
+						}
 			.cf-culture .span4 {
 				float: left;
 				width: 290px;
