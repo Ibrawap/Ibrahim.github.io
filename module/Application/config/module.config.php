@@ -124,6 +124,8 @@ return array(
                                 'defaults' => array(
                                     'controller' => 'Application\Controller\IndexController',
                                     'action' => 'foo',
+                                    'headTitle' => 'IGN\'s Code-Foo',
+                                    'headMeta-description' => 'Code-Foo is a six week program where you\'ll get to learn cutting-edge tech and have the opportunity to work on real IGN engineering projects.',
                                 ),
                             ),
                         ),
