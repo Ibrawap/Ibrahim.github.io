@@ -51,6 +51,7 @@ body {
 				height: 72px;
 				text-indent: -999999px;
 				float: right;
+				margin-top: 20px;
 				margin-right: 200px;
 				/* margin: -130px 50px; */
 			}
@@ -139,6 +140,10 @@ body {
 			    text-shadow: -2px 2px 3px rgba(0,0,0,0.4);
 			    text-transform: uppercase;
 			}
+			.cf-subhead .span4 strong.smaller {
+				font-size: 14px;
+				color: #989898;
+			}
 			.cf-subhead .span4 p {
 			    font-size: 14px;
 			    line-height: 20px;
@@ -188,7 +193,7 @@ body {
 					text-transform: uppercase;
 				}
 				.cf-culture .span4 p {
-					margin-top: 20px;
+					margin-top: 10px;
 					font-size: 14px;
 					color: #1a1a1a;
 					font-weight: 500;
@@ -215,6 +220,8 @@ body {
 				height: 140px;
 				margin-bottom: 20px;
 			}
+				.cf-speakers .span2.manishPandit { background: url('/images/code-foo/speakers-sprite.jpg') -140px 0 no-repeat; }
+				.cf-speakers .span2.adamPassey { background: url('/images/code-foo/speakers-sprite.jpg') -280px 0 no-repeat; }
 				.cf-speakers .span2 a {
 					display: block;
 					width: 140px;
@@ -237,7 +244,7 @@ body {
 	 */
 	.application-overlay {
 		position: absolute;
-		top: -1200px; 
+		top: -1000px; 
 		z-index: 1001;
 	}
 		.application-overlay .container {
