@@ -11,7 +11,7 @@ class IndexController extends ActionController
 
     protected $myIgnToEmailAddress;
 
-	/**
+    /**
      * This setter should be populated by local di config
      */
     public function setMyIgnToEmailAddress(array $myIgnToEmailAddress)
@@ -45,7 +45,7 @@ class IndexController extends ActionController
     
     public function fooAction()
     {
-    	$routeMatch = $this->getEvent()->getRouteMatch();
+        $routeMatch = $this->getEvent()->getRouteMatch();
         $renderer = $this->getLocator()->get('Zend\View\Renderer\PhpRenderer');
         $renderer->headTitle($routeMatch->getParam('headTitle'));
         $renderer->headMeta($routeMatch->getParam('headMeta-description'), 'description');
