@@ -7,7 +7,7 @@ return array(
         'IgnLess',
     ),
     'module_listener_options' => array( 
-        'config_cache_enabled' => false,
+        'config_cache_enabled' => true,
         'cache_dir'            => 'data/cache',
         'module_paths' => array(
             './module',
