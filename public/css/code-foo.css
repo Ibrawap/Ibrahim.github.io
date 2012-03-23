@@ -49,11 +49,8 @@ body {
 				background: url('/images/code-foo/typography-spritesheet.png') no-repeat;
 				width: 55px;
 				height: 72px;
+				
 				text-indent: -999999px;
-				float: right;
-				margin-top: 20px;
-				margin-right: 200px;
-				/* margin: -130px 50px; */
 			}
 			.cf-header-container .container h3 {
 				color: #838383;
@@ -62,7 +59,9 @@ body {
 				padding-left: 10px;
 			}
 				.cf-header-container .container h3 a {
-					color: #a1cf3d;
+					color: #FFF;
+					text-transform: uppercase;
+					font-size: 18px;
 				}
 		.cf-ribbon-container { 
 			position: absolute;
@@ -262,6 +261,7 @@ body {
 			}
 				.cf-speakers .span2.manishPandit { background: url('/images/code-foo/speakers-sprite.jpg') -140px 0 no-repeat; }
 				.cf-speakers .span2.adamPassey { background: url('/images/code-foo/speakers-sprite.jpg') -280px 0 no-repeat; }
+				.cf-speakers .span2.tonyFord { background: url('/images/code-foo/speakers-sprite.jpg') -420px 0 no-repeat; }
 				.cf-speakers .span2 a {
 					display: block;
 					width: 140px;
