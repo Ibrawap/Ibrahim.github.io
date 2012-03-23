@@ -51,21 +51,6 @@ body {
 				height: 72px;
 				
 				text-indent: -999999px;
-				/*
-				float: right;
-				margin-top: 20px;
-				margin-right: 200px;
-				*/
-				/* margin: -130px 50px; */
-			}
-			.cf-header-container .container .sup {
-				background: url('/images/code-foo/typography-spritesheet.png') no-repeat;
-				width: 55px;
-				height: 72px;
-				text-indent: -999999px;
-				float: right;
-				margin-right: 190px;
-				margin-top: -165px;
 			}
 			.cf-header-container .container h3 {
 				color: #838383;
