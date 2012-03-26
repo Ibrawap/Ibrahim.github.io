@@ -61,7 +61,7 @@ def deploy(app_ref='', static_ref=''):
         deploy_message = prompt('Deploy message:')
 
     # Ensure only one deploy runs at a time
-    lock_file = '/tmp/brood.lock'
+    lock_file = '/tmp/brood.code.ign.com.lock'
     with settings(
         hide('warnings', 'running', 'stdout', 'stderr'),
         warn_only=True
