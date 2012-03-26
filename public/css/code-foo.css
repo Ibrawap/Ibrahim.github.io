@@ -49,6 +49,8 @@ body {
 				background: url('/images/code-foo/typography-spritesheet.png') no-repeat;
 				width: 55px;
 				height: 72px;
+				float: right;
+				margin: -150px 185px 0 100px;
 				
 				text-indent: -999999px;
 			}
