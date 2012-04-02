@@ -1,7 +1,8 @@
 RewriteEngine On
+RewriteBase /
 # Until we have a homepage that actually matters let's just use the blog
-RewriteRule ^/$ http://code.ign.com/blog/ [R=302,L]
-RewriteRule ^/index.php$ http://code.ign.com/blog/ [R=302,L]
+RewriteCond %{REQUEST_URI} ^/$
+RewriteRule ^.*$ http://code.ign.com/blog [R=302,L]
 RewriteCond %{REQUEST_FILENAME} -s [OR]
 RewriteCond %{REQUEST_FILENAME} -l [OR]
 RewriteCond %{REQUEST_FILENAME} -d
