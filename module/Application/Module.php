@@ -10,10 +10,11 @@ class Module implements AutoloaderProvider
 {
     public function init(Manager $moduleManager)
     {
-        $events = StaticEventManager::getInstance();
-        $events->attach('bootstrap', 'bootstrap', array($this, 'initializeView'), 100);
-        $events->attach('bootstrap', 'bootstrap', array($this, 'initializeNavigation'));
-        $events->attach('Zend\Mvc\Application', 'dispatch', array($this, 'setMatchedRouteNavigation'));
+        $events       = $moduleManager->events();
+        $sharedEvents = $events->getSharedCollections();
+        $sharedEvents->attach('bootstrap', 'bootstrap', array($this, 'initializeView'), 100);
+        $sharedEvents->attach('bootstrap', 'bootstrap', array($this, 'initializeNavigation'));
+        $sharedEvents->attach('Zend\Mvc\Application', 'dispatch', array($this, 'setMatchedRouteNavigation'));
     }
 
     public function getAutoloaderConfig()
@@ -34,7 +35,7 @@ class Module implements AutoloaderProvider
     {
         return include __DIR__ . '/config/module.config.php';
     }
-    
+
     public function initializeView($e)
     {
         $app          = $e->getParam('application');
