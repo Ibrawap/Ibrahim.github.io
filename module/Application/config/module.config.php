@@ -63,14 +63,11 @@ return array(
             ),
             'Zend\Mvc\View\ExceptionStrategy' => array(
                 'parameters' => array(
-                    'displayExceptions' => true,
                     'exceptionTemplate' => 'error/index',
                 ),
             ),
             'Zend\Mvc\View\RouteNotFoundStrategy' => array(
                 'parameters' => array(
-                    'displayNotFoundReason' => true,
-                    'displayExceptions'     => true,
                     'notFoundTemplate'      => 'error/404',
                 ),
             ),
