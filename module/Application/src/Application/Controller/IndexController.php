@@ -37,12 +37,12 @@ class IndexController extends ActionController
             $gravatarProfile = $gravatarProfileServiceProxy->getByEmail($this->myIgnToEmailAddress[$author]);
             if ($gravatarProfile instanceof GravatarProfile) {
                 $this->redirect()->toRoute('person', array('username' => $gravatarProfile->getPreferredUsername()));
-                return;
+                return $this->getResponse();
             }
         }
         throw new \Exception('Profile not found');
     }
-    
+
     public function fooAction()
     {
         $routeMatch = $this->getEvent()->getRouteMatch();
