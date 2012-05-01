@@ -44,6 +44,7 @@ body {
 				font-family: 'Fredericka the Great', cursive;
 				color: #3e3e3e;
 				font-size: 147px;
+				font-weight: normal;
 			}
 			.cf-header-container .container sup {
 				background: url('/images/code-foo/typography-spritesheet.png') no-repeat;
@@ -264,6 +265,7 @@ body {
 				.cf-speakers .span2.manishPandit { background: url('/images/code-foo/speakers-sprite.jpg') -140px 0 no-repeat; }
 				.cf-speakers .span2.adamPassey { background: url('/images/code-foo/speakers-sprite.jpg') -280px 0 no-repeat; }
 				.cf-speakers .span2.tonyFord { background: url('/images/code-foo/speakers-sprite.jpg') -420px 0 no-repeat; }
+				.cf-speakers .span2.nicholasCalugar { background: url('/images/code-foo/speakers-sprite.jpg') -560px 0 no-repeat; }
 				.cf-speakers .span2 a {
 					display: block;
 					width: 140px;
