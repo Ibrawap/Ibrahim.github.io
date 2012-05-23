@@ -41,6 +41,6 @@ class JobsController extends ActionController
         $renderer = $this->getLocator()->get('Zend\View\Renderer\PhpRenderer');
         $renderer->headTitle($routeMatch->getParam('headTitle'));
         $renderer->headMeta($routeMatch->getParam('headMeta-description'), 'description');
-        return array('jobs' => $this->resumatorFeed->getJobsByFilter('department', 'Engineering'));
+        return array('jobs' => $this->resumatorFeed->getJobsByFilter('department', array('Engineering', 'Tech Ops')));
     }
 }

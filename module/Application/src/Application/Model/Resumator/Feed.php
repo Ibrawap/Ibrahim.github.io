@@ -80,7 +80,15 @@ class Feed
     public function getJobsByFilter($filter, $value)
     {
         $return = null;
-        $result = $this->xml->xpath("job[$filter='$value']");
+        if (!is_array($value)) {
+            $value = array($value);
+        }
+        $query = array();
+        foreach ($value as $v) {
+            $query[] = "$filter='$v'";
+        }
+        $query = implode(' or ', $query);
+        $result = $this->xml->xpath("job[$query]");
         if (is_array($result)) {
             foreach ($result as $job) {
                 $return[] = new Job($job);
