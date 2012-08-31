@@ -25,7 +25,7 @@ $config = array(
                         'blog' => array(
                             'options' => array(
                                 'defaults' => array(
-                                    'blog_name' => $blogName,
+                                    'blogName' => $blogName,
                                     'headTitle' => $blogTitle,
                                     'headMeta-description' => $blogMetaDescription,
                                 ),
@@ -34,7 +34,7 @@ $config = array(
                         'blog-post' => array(
                             'options' => array(
                                 'defaults' => array(
-                                    'blog_name' => $blogName,
+                                    'blogName' => $blogName,
                                     'headTitle' => $blogTitle,
                                     'headMeta-description' => $blogMetaDescription,
                                 ),
